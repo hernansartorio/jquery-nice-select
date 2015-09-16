@@ -2,6 +2,7 @@ select {
   display: none; }
 
 .nice-select {
+  -webkit-tap-highlight-color: transparent;
   background-color: #fff;
   border-radius: 5px;
   border: solid 1px #e8e8e8;

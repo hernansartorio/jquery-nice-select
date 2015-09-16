@@ -151,15 +151,15 @@
     
   </div>
   
-
-
   <script src="js/jquery.js"></script>
-  <script src="js/jquery.nice-select.min.js"></script>
+  <script src="js/jquery.nice-select.min.js"></script>  
+  <script src="js/fastclick.js"></script>
   <script src="js/prism.js"></script>
   
   <script>
     $(document).ready(function() {
-      $('select').niceSelect();
+      $('select').niceSelect();      
+      FastClick.attach(document.body);
     });
   </script>
 

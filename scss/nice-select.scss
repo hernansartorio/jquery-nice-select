@@ -21,7 +21,8 @@ select {
 }
 
 // Style the dropdown
-.nice-select { 
+.nice-select {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   background-color: #fff;
   border-radius: $input_border_radius;
   border: solid 1px $gray_light; 
