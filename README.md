@@ -31,4 +31,4 @@ $(document).ready(function() {
 });
 ```
 
-Full documentation and examples at [hernansartorio.github.io/jquery-nice-select]( http://hernansartorio.github.io/jquery-nice-select).
+Full documentation and examples at [hernansartorio.com/jquery-nice-select](http://hernansartorio.com/jquery-nice-select).
