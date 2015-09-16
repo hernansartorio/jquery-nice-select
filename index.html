@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <title>jQuery Nice Select</title>
+
+  <link href='https://fonts.googleapis.com/css?family=Work+Sans:300,400,600&Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+
+<body>
+
+  <div class="container">
+  
+    <div class="header">      
+      <h1>jQuery Nice Select</h1>
+      
+      <p>A lightweight jQuery plugin that replaces native select elements with customizable dropdowns.</p>
+      
+      <a href="#" class="button">Download</a>
+      <a href="https://github.com/hernansartorio/jquery-nice-select" class="button light">View on GitHub</a>
+    </div>
+    
+    <h2>Usage</h2>
+    <p><strong>1.</strong> Include jQuery and the plugin.</p>
+    
+    <pre><code class="language-html">&lt;script src=&quot;path/to/jquery.js&quot;&gt;&lt;/script&gt; 
+&lt;script src=&quot;path/to/jquery.nice-select.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+    
+    <p><strong>2.</strong> Include the plugin styles, either the compiled CSS...</p>
+    
+    <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;path/to/nice-select.css&quot;&gt;</code></pre>
+
+    <p>...or, ideally, import the SASS source (if you use SASS) in your main stylesheet for easier customization.</p>
+    
+    <pre><code class="language-scss">@import 'nice-select';</code></pre>
+    
+    <p><strong>3.</strong> Finally, initialize the plugin.</p>
+    
+    <pre><code class="language-js">$(document).ready(function() {
+  $('select').niceSelect();
+});</code></pre>
+    
+    <p>All done. That will turn this:</p>
+    
+    <pre><code class="language-html">&lt;select&gt;
+  &lt;option value=&quot;1&quot;&gt;Some option&lt;/option&gt;
+  &lt;option value=&quot;2&quot;&gt;Another option&lt;/option&gt;
+  &lt;option value=&quot;3&quot;&gt;Potato&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+    
+    <p>...into this:</p>
+    
+    <div class="box">
+      <select>
+        <option value="1">Some option</option>
+        <option value="2">Another option</option>
+        <option value="3">Potato</option>
+      </select>
+    </div>
+    
+    <p>For reference, this is the markup structure that was generated above:</p>
+  
+    <pre><code class="language-html">&lt;div class=&quot;nice-select&quot;&gt;
+  &lt;span class=&quot;current&quot;&gt;Some option&lt;/span&gt;
+  &lt;ul class=&quot;list&quot;&gt;
+    &lt;li class=&quot;option selected&quot;&gt;Some option&lt;/li&gt;
+    &lt;li class=&quot;option&quot;&gt;Another option&lt;/li&gt;
+    &lt;li class=&quot;option&quot;&gt;Potato&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+    
+    <p>There are no settings (a native select doesn't have settings), although there are a couple of special features, documented below.</p>
+    
+    <h2>Display text</h2>
+    <p>You can specify an alternate text for each option, which will be displayed on the dropdown when that option is selected.</p>
+    
+    <p>Add a <code class="language-html">data-display</code> attribute to the desired options. For example:</p>
+    
+        <pre><code class="language-html">&lt;select&gt;
+  &lt;option data-display=&quot;Select&quot;&gt;Nothing&lt;/option&gt;
+  &lt;option value=&quot;1&quot;&gt;Some option&lt;/option&gt;
+  &lt;option value=&quot;2&quot;&gt;Another option&lt;/option&gt;
+  &lt;option value=&quot;3&quot;&gt;Potato&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+    
+    <div class="box">
+      <select>
+        <option data-display="Select">Nothing</option>
+        <option value="1">Some option</option>
+        <option value="2">Another option</option>
+        <option value="3">Potato</option>
+      </select>
+    </div>
+
+    <h2>Custom classes</h2>
+    
+    <p>Every class you assign to a select element will be copied to the generated dropdown. That way you can customize different versions of it to your needs just by adding new CSS.</p>
+    
+    <p>These are some examples included in the plugin stylesheet:</p>
+    
+    <div class="box">
+      <label>Wide</label>
+      <select class="wide">
+        <option data-display="Select">Nothing</option>
+        <option value="1">Some option</option>
+        <option value="2">Another option</option>
+        <option value="3">Potato</option>
+      </select>
+    </div>
+    
+    <div class="box">
+      <label class="right">Right</label>
+      <select class="right">
+        <option data-display="Select">Nothing</option>
+        <option value="1">Some option</option>
+        <option value="2">Another option</option>
+        <option value="3">Potato</option>
+      </select>
+    </div>
+    
+    <div class="box">
+      <label>Small</label>
+      <select class="small">
+        <option data-display="Select">Nothing</option>
+        <option value="1">Some option</option>
+        <option value="2">Another option</option>
+        <option value="3">Potato</option>
+      </select>
+    </div>   
+    
+    
+    <div class="footer">
+      <h2>Use responsibly</h2>
+      
+      <p><a href="http://www.lukew.com/ff/entry.asp?1950">Dropdowns should be the UI of last resort.</a></p>
+      
+      <a href="#" class="button">Download</a>
+      <a href="https://github.com/hernansartorio/jquery-nice-select" class="button light">View on GitHub</a>
+      
+      <div class="credit">
+        Made by <a href="http://hernansartorio.com/">Hernán Sartorio</a>
+      </div>
+    </div>
+    
+    
+  </div>
+  
+
+
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.nice-select.min.js"></script>
+  <script src="js/prism.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      $('select').niceSelect();
+    });
+  </script>
+
+</body>
+</html>

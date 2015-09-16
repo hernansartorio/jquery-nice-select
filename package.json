@@ -1,0 +1,16 @@
+{
+  "name": "jquery-nice-select",
+  "version": "1.0",
+  "author": "Hernán Sartorio",
+  "homepage": "http://hernansartorio.github.io/jquery-nice-select",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-postcss": "*",
+    "autoprefixer": "*",
+    "matchdep": "*"
+  }
+}
