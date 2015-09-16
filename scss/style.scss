@@ -132,11 +132,11 @@ label {
     color: $primary;
     line-height: $input_height - 2;
     margin-left: 24px;
-    &:hover, &:focus {
-      border-color: $primary_light;
+    &:hover {
+      border-color: darken($gray_light, 5%);
     }
-    &:active {
-      border-color: darken($primary, 0%);
+    &:active, &:focus {
+      border-color: $primary_light;
     }
   }
   @media screen and (max-width: 360px) {

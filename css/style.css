@@ -295,10 +295,10 @@ label.right {
   color: #55A1FB;
   line-height: 40px;
   margin-left: 24px; }
-.button.light:hover, .button.light:focus {
+.button.light:hover {
+  border-color: #d0dae5; }
+.button.light:active, .button.light.nice-select.open, .button.light:focus {
   border-color: #88BFFF; }
-.button.light:active, .button.light.nice-select.open {
-  border-color: #55a1fb; }
 @media screen and (max-width: 360px) {
   .button {
     width: 100%; }
