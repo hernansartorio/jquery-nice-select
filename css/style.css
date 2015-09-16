@@ -191,8 +191,8 @@ pre[class*="language-"] {
   cursor: help; }
 
 body {
-  -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   color: #445870;
   font-size: 14px;
   font-weight: normal;
@@ -267,6 +267,7 @@ label.right {
   float: right; }
 
 .button {
+  -webkit-tap-highlight-color: transparent;
   background-color: #55A1FB;
   border-radius: 5px;
   border: none;
@@ -316,7 +317,6 @@ label.right {
   margin-bottom: 36px; }
 
 .footer {
-  padding: 18px 0 0;
   text-align: center; }
 .footer p {
   margin-bottom: 90px; }

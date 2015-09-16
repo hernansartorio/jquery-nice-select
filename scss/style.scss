@@ -21,8 +21,8 @@ $primary_light: $blue_light;
 }
 
 body {
-  -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   color: $gray_dark;
   font-size: 14px;
   font-weight: normal;
@@ -102,6 +102,7 @@ label {
 }
 
 .button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   background-color: $primary;
   border-radius: $input_border_radius;
   border: none;
@@ -161,7 +162,6 @@ label {
 }
 
 .footer {
-  padding: 18px 0 0;
   text-align: center;
   p {
     margin-bottom: 90px;
