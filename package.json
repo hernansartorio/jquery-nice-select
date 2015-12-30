@@ -1,16 +1,29 @@
 {
   "name": "jquery-nice-select",
-  "version": "1.0",
-  "author": "Hernán Sartorio",
-  "homepage": "http://hernansartorio.github.io/jquery-nice-select",
+  "version": "1.0.0",
+  "description": "A lightweight jQuery plugin that replaces native select elements with customizable dropdowns.",
+  "main": "gulpfile.js",
+  "dependencies": {},
   "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-contrib-cssmin": "*",
-    "grunt-contrib-sass": "*",
-    "grunt-contrib-uglify": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-postcss": "*",
-    "autoprefixer": "*",
-    "matchdep": "*"
-  }
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.1",
+    "gulp-uglify": "^1.5.1",
+    "jshint": "^2.8.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hernansartorio/jquery-nice-select.git"
+  },
+  "author": "Hernán Sartorio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hernansartorio/jquery-nice-select/issues"
+  },
+  "homepage": "https://github.com/hernansartorio/jquery-nice-select#readme"
 }

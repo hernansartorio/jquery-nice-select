@@ -1,5 +1,5 @@
 /*  jQuery Nice Select - v1.0
-    http://hernansartorio.github.io/jquery-nice-select
+    https://github.com/hernansartorio/jquery-nice-select
     Made by Hernán Sartorio  */
  
 (function($) {
