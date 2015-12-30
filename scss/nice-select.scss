@@ -156,5 +156,10 @@ select {
     &.selected { 
       font-weight: bold;
     }
+    &.disabled {
+      background-color: transparent;
+      color: $gray;
+      cursor: default;
+    }
   }
 }

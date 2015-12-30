@@ -123,6 +123,10 @@ select {
       background-color: #F6F7F9; }
     .nice-select .option.selected {
       font-weight: bold; }
+    .nice-select .option.disabled {
+      background-color: transparent;
+      color: #90a1b5;
+      cursor: default; }
 
 code[class*="language-"],
 pre[class*="language-"] {
