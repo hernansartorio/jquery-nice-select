@@ -5,9 +5,9 @@
 (function($) {
 
   $.fn.niceSelect = function() {
-	  
-	// Hide native select
-	this.hide();
+      
+    // Hide native select
+    this.hide();
 
     // Create custom markup
     this.each(function() {
