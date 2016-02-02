@@ -143,9 +143,18 @@
         <option value="3" disabled>A disabled option</option>
         <option value="4">Potato</option>
       </select>
-    </div>   
+    </div>
     
+    <h2>Notes</h2>  
     
+    <p>In some cases there can be a brief flash in which the native selects are displayed—between the time the page is loaded and the scripts are run. This can be fixed by adding a CSS rule to hide them beforehand:</p>
+        
+    <pre><code class="language-scss">select {
+  display: none;
+}</code></pre>
+
+    <p>Note that the above rule will hide all native select elements. If you're only applying the plugin to some select elements you should adapt the rule accordingly.</p>
+
     <div class="footer">
       <h2>Use responsibly</h2>
       

@@ -2,7 +2,7 @@
   -webkit-tap-highlight-color: transparent;
   background-color: #fff;
   border-radius: 5px;
-  border: solid 1px #E0E7EE;
+  border: solid 1px #e0e7ee;
   box-sizing: border-box;
   clear: both;
   cursor: pointer;
@@ -29,7 +29,7 @@
   .nice-select:hover {
     border-color: #d0dae5; }
   .nice-select:active, .nice-select.open, .nice-select:focus {
-    border-color: #88BFFF; }
+    border-color: #88bfff; }
   .nice-select:after {
     border-bottom: 2px solid #90a1b5;
     border-right: 2px solid #90a1b5;
@@ -117,7 +117,7 @@
     -webkit-transition: all 0.2s;
     transition: all 0.2s; }
     .nice-select .option:hover, .nice-select .option.focus, .nice-select .option.selected.focus {
-      background-color: #F6F7F9; }
+      background-color: #f6f7f9; }
     .nice-select .option.selected {
       font-weight: bold; }
     .nice-select .option.disabled {
@@ -155,7 +155,7 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  background: #F6F7F9; }
+  background: #f6f7f9; }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
@@ -201,7 +201,7 @@ pre[class*="language-"] {
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-  color: #55A1FB; }
+  color: #55a1fb; }
 
 .token.function {
   color: #DD4A68; }
@@ -246,21 +246,21 @@ h2 {
   font-size: 21px;
   font-weight: 400;
   margin: 0 0 12px;
-  padding-top: 18px; }
+  padding-top: 48px; }
 
 h3 {
   font-weight: 600;
   font-size: 14px; }
 
 a:not(.button) {
-  color: #55A1FB;
+  color: #55a1fb;
   outline: none;
   text-decoration: none;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   border-bottom: 1px solid transparent; }
   a:not(.button):hover, a:not(.button):focus {
-    border-bottom: 1px solid #88BFFF; }
+    border-bottom: 1px solid #88bfff; }
 
 ::-moz-selection {
   background: #f3f4f7; }
@@ -268,20 +268,14 @@ a:not(.button) {
 ::selection {
   background: #f3f4f7; }
 
-::-moz-selection {
-  background: #f3f4f7; }
-
-::-webkit-selection {
-  background: #f3f4f7; }
-
 .container {
   margin: 96px auto 60px;
   max-width: 40em; }
 
 .box {
-  background-color: #F6F7F9;
+  background-color: #f6f7f9;
   border-radius: 2px;
-  margin-bottom: 24px;
+  margin-bottom: 30px;
   padding: 24px 30px; }
   .box:before, .box:after {
     content: "";
@@ -300,7 +294,7 @@ label {
 
 .button {
   -webkit-tap-highlight-color: transparent;
-  background-color: #55A1FB;
+  background-color: #55a1fb;
   border-radius: 5px;
   border: none;
   box-sizing: border-box;
@@ -324,14 +318,14 @@ label {
     background-color: #2d8bfa; }
   .button.light {
     background-color: #fff;
-    border: 1px solid #E0E7EE;
-    color: #55A1FB;
+    border: 1px solid #e0e7ee;
+    color: #55a1fb;
     line-height: 40px;
     margin-left: 24px; }
     .button.light:hover {
       border-color: #d0dae5; }
     .button.light:active, .button.light.nice-select.open, .button.light:focus {
-      border-color: #88BFFF; }
+      border-color: #88bfff; }
   @media screen and (max-width: 360px) {
     .button {
       width: 100%; }
