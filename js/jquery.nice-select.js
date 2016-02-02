@@ -14,9 +14,9 @@
       var select = $(this);
       
       if (!select.next().hasClass('nice-select')) {
-        select.after('<div class="nice-select ' +
-          (select.attr('class') || '') +
-          (select.attr('disabled') ? 'disabled' : '" tabindex="0') +
+        select.after('<div class="nice-select' +
+          (' ' + select.attr('class') || '') +
+          (select.attr('disabled') ? ' disabled' : '" tabindex="0') +
           '"><span class="current"></span><ul class="list"></ul></div>');
         
         var dropdown = select.next();
