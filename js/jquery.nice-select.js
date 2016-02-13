@@ -9,14 +9,15 @@
     // Hide native select
     this.hide();
 
-    // Create custom markup
+    // Create custom markup & select input events
     this.each(function() {
       var select = $(this);
       
       if (!select.next().hasClass('nice-select')) {
-        select.after('<div class="nice-select' +
-          (' ' + select.attr('class') || '') +
-          (select.attr('disabled') ? ' disabled' : '" tabindex="0') +
+        
+        var classAttr = select.attr('class');
+        select.after('<div class="nice-select' + (classAttr ? ' ' + classAttr : '') +
+          (select.prop('disabled') ? ' disabled' : '" tabindex="0') +
           '"><span class="current"></span><ul class="list"></ul></div>');
         
         var dropdown = select.next();
@@ -31,8 +32,28 @@
             ($(this).is(':selected') ? ' selected' : '') +
             ($(this).is(':disabled') ? ' disabled' : '') +
             '" data-value="' + $(this).val() + '"' +
-            (display ? ' data-display="' + display : '') + '"' +
+            (display ? ' data-display="' + display + '"' : '') +
             '>' + $(this).text() + '</li>');
+        });
+        
+        
+        /*
+           Events
+        */
+        
+        // Updates the dropdown after setting the value manually
+        select.on('update', function() {
+          dropdown.find('.list li[data-value="' + $(this).val() + '"]').trigger('click', [true]);
+        });
+        
+        // Sets disabled state
+        select.on('disable', function() {
+          dropdown.addClass('disabled');
+        });
+        
+        // Sets enabled state
+        select.on('enable', function() {
+          dropdown.removeClass('disabled');
         });
       }
     });
@@ -60,13 +81,14 @@
     
     // Close when clicking outside
     $(document).on('click.nice_select', function(event) {
-      if ($(event.target).closest('.nice-select').length === 0) {
+      var target = $(event.target);
+      if ((target.closest('.nice-select').length === 0) && target.is(':visible')) {
         $('.nice-select').removeClass('open').find('.option');  
       }
     });
     
     // Option click
-    $(document).on('click.nice_select', '.nice-select .option:not(.disabled)', function(event) {
+    $(document).on('click.nice_select', '.nice-select .option:not(.disabled)', function(event, stopPropagation) {
       var option = $(this);
       var dropdown = option.closest('.nice-select');
       
@@ -77,6 +99,9 @@
       dropdown.find('.current').text(text);
       
       dropdown.prev('select').val(option.data('value')).trigger('change');
+      
+      if (stopPropagation)
+        event.stopPropagation();
     });
 
     // Keyboard events
@@ -128,7 +153,7 @@
         }
       }
     });
-
+    
   };
 
 }(jQuery));
