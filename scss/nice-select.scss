@@ -157,3 +157,15 @@ $arrow_color: $gray !default;
     }
   }
 }
+
+// Use display instead of opacity for IE <= 10
+.no-csspointerevents .nice-select {
+  .list {
+    display: none;
+  }
+  &.open {
+    .list {
+      display: block;
+    }
+  }
+}
