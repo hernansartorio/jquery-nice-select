@@ -41,7 +41,7 @@
 
     <p>...or, ideally, import the SASS source (if you use SASS) in your main stylesheet for easier customization.</p>
     
-    <pre><code class="language-scss">@import 'nice-select';</code></pre>
+    <pre><code class="language-scss">@import 'nice-select'; // Or 'nice-select-prefixed'. See 'Notes' section.</code></pre>
     
     <p><strong>3.</strong> Finally, initialize the plugin.</p>
     
@@ -147,13 +147,20 @@
     
     <h2>Notes</h2>  
     
-    <p>In some cases there can be a brief flash in which the native selects are displayed—between the time the page is loaded and the scripts are run. This can be fixed by adding a CSS rule to hide them beforehand:</p>
-        
-    <pre><code class="language-scss">select {
+    <ul>
+      <li>
+        <p>Autoprefixer is used to add vendor prefixes to CSS rules for older browser support. A <i>nice-select-prefixed.scss</i> file is also generated if you wish to include the SASS file in your project and you're not using Autoprefixer.</p>
+      </li>
+      <li>
+        <p>In some cases there can be a brief flash in which the native selects are displayed—between the time the page is loaded and the scripts are run. This can be fixed by adding a CSS rule to hide them beforehand:</p>
+            
+        <pre><code class="language-scss">select {
   display: none;
 }</code></pre>
 
-    <p>Note that the above rule will hide all native select elements. If you're only applying the plugin to some select elements you should adapt the rule accordingly.</p>
+        <p>Note that the above rule will hide all native select elements. If you're only applying the plugin to some select elements you should adapt the rule accordingly.</p>
+      </li>
+    </ul>
 
     <div class="footer">
       <h2>Use responsibly</h2>

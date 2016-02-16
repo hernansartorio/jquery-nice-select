@@ -56,10 +56,16 @@ h3 {
   font-size: 14px;  
 }
 
+ul {
+  margin: 0;
+  padding-left: 16px;
+}
+
 a:not(.button) {
   color: $primary;
   outline: none;
   text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   border-bottom: 1px solid transparent;
   &:hover, &:focus {
@@ -111,6 +117,7 @@ label {
   padding: 0 24px;
   text-align: center;
   text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   white-space: nowrap;
   width: auto;

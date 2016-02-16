@@ -264,6 +264,10 @@ h3 {
   font-weight: 600;
   font-size: 14px; }
 
+ul {
+  margin: 0;
+  padding-left: 16px; }
+
 a:not(.button) {
   color: #55a1fb;
   outline: none;
