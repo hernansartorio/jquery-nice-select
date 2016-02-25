@@ -1,5 +1,6 @@
 {
    "name": "jquery-nice-select",
+   "version": "1",
    "authors": [
       "Hernán Sartorio <hello@hernansartorio.com>"
    ],
