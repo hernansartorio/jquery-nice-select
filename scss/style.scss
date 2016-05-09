@@ -24,12 +24,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $gray_dark;
+  font-family: 'Work Sans', sans-serif;
   font-size: 14px;
   font-weight: normal;
+  letter-spacing: -0.25px;
   margin: 0;
   padding: 0 18px;
-  font-family: 'Work Sans', sans-serif;
-  letter-spacing: -0.25px;
 }
 
 p {
@@ -39,21 +39,23 @@ p {
 
 h1 {
   font-size: 36px;
-  margin: 0 0 24px;
   font-weight: 300;
   letter-spacing: -2px;
+  margin: 0 0 24px;
 }
 
 h2 {
-  font-size: 21px;
+  font-size: 22px;
   font-weight: 400;
   margin: 0 0 12px;
   padding-top: 48px;
 }
 
 h3 {
-  font-weight: 600;
-  font-size: 14px;  
+  font-size: 18px;  
+  font-weight: 400;
+  margin: 0 0 12px;
+  padding-top: 12px;
 }
 
 ul {
