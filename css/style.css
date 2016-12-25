@@ -86,6 +86,9 @@
     .nice-select.small .option {
       line-height: 34px;
       min-height: 34px; }
+  .nice-select span.current {
+    display: block;
+    overflow: hidden; }
   .nice-select .list {
     background-color: #fff;
     border-radius: 5px;
