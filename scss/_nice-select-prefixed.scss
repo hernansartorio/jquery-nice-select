@@ -19,7 +19,7 @@ $arrow_color: $gray !default;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   background-color: #fff;
   border-radius: $input_border_radius;
-  border: solid 1px $gray_light; 
+  border: solid 1px $gray_light;
   box-sizing: border-box;
   clear: both;
   cursor: pointer;
@@ -51,19 +51,19 @@ $arrow_color: $gray !default;
     border-color: $primary_light;
   }
   // Arrow
-  &:after { 
+  &:after {
     border-bottom: 2px solid $arrow_color;
     border-right: 2px solid $arrow_color;
     content: '';
-    display: block; 
+    display: block;
     height: 5px;
     margin-top: -4px;
     pointer-events: none;
-    position: absolute; 
-    right: 12px; 
-    top: 50%; 
-    -webkit-transform-origin: 66% 66%; 
-        -ms-transform-origin: 66% 66%; 
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    -webkit-transform-origin: 66% 66%;
+        -ms-transform-origin: 66% 66%;
             transform-origin: 66% 66%;
     -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
@@ -73,7 +73,7 @@ $arrow_color: $gray !default;
     transition: all 0.15s ease-in-out;
     width: 5px;
   }
-  
+
   &.open {
     @extend :active;
     &:after {
@@ -93,11 +93,11 @@ $arrow_color: $gray !default;
     border-color: lighten($gray_light, 2%);
     color: $gray;
     pointer-events: none;
-    &:after { 
+    &:after {
       border-color: lighten($arrow_color, 20%);
     }
   }
-  
+
   // Modifiers
   &.wide {
     width: 100%;
@@ -117,7 +117,7 @@ $arrow_color: $gray !default;
     font-size: $font_size_small;
     height: $input_height_small;
     line-height: $input_height_small - 2;
-    &:after { 
+    &:after {
       height: 4px;
       width: 4px;
     }
@@ -126,7 +126,12 @@ $arrow_color: $gray !default;
       min-height: $input_height_small - 2;
     }
   }
-  
+
+  span.current {
+      display: block;
+      overflow: hidden;
+  }
+
   // List and options
   .list {
     background-color: #fff;
@@ -167,10 +172,10 @@ $arrow_color: $gray !default;
     -webkit-transition  
 : all 0.2s;
     transition: all 0.2s;
-    &:hover, &.focus, &.selected.focus { 
+    &:hover, &.focus, &.selected.focus {
       background-color: $gray_lighter;
     }
-    &.selected { 
+    &.selected {
       font-weight: bold;
     }
     &.disabled {
