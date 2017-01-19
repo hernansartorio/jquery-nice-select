@@ -23,7 +23,7 @@
     "url": "git+https://github.com/hernansartorio/jquery-nice-select.git"
   },
   "author": "Hernán Sartorio",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/hernansartorio/jquery-nice-select/issues"
   },
