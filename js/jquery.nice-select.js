@@ -58,7 +58,7 @@
       $select.after($('<div></div>')
         .addClass('nice-select')
         .addClass($select.attr('class') || '')
-        .addClass($select.attr('disabled') ? 'disabled' : '')
+        .addClass($select.prop('disabled') ? 'disabled' : '')
         .attr('tabindex', $select.attr('disabled') ? null : '0')
         .html('<span class="current"></span><ul class="list"></ul>')
       );
