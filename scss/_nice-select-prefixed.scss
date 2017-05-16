@@ -35,8 +35,13 @@ $arrow_color: $gray !default;
   padding-right: $dropdown_padding + 12;
   position: relative;
   text-align: left !important;
+  -webkit-transition  
+: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   white-space: nowrap;
   width: auto;
   &:hover {
@@ -57,8 +62,14 @@ $arrow_color: $gray !default;
     position: absolute; 
     right: 12px; 
     top: 50%; 
-    transform-origin: 66% 66%;
-    transform: rotate(45deg);
+    -webkit-transform-origin: 66% 66%; 
+        -ms-transform-origin: 66% 66%; 
+            transform-origin: 66% 66%;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transition  
+: all 0.15s ease-in-out;
     transition: all 0.15s ease-in-out;
     width: 5px;
   }
@@ -66,12 +77,16 @@ $arrow_color: $gray !default;
   &.open {
     @extend :active;
     &:after {
-      transform: rotate(-135deg);
+      -webkit-transform: rotate(-135deg);
+          -ms-transform: rotate(-135deg);
+              transform: rotate(-135deg);
     }
     .list {
       opacity: 1;
       pointer-events: auto;
-      transform: scale(1) translateY(0);
+      -webkit-transform: scale(1) translateY(0);
+          -ms-transform: scale(1) translateY(0);
+              transform: scale(1) translateY(0);
     }
   }
   &.disabled {
@@ -125,8 +140,14 @@ $arrow_color: $gray !default;
     pointer-events: none;
     position: absolute;
     top: 100%; left: 0;
-    transform-origin: 50% 0;
-    transform: scale(.75) translateY(- $input_height / 2);
+    -webkit-transform-origin: 50% 0;
+        -ms-transform-origin: 50% 0;
+            transform-origin: 50% 0;
+    -webkit-transform: scale(.75) translateY(- $input_height / 2);
+        -ms-transform: scale(.75) translateY(- $input_height / 2);
+            transform: scale(.75) translateY(- $input_height / 2);
+    -webkit-transition  
+: all .2s cubic-bezier(0.5, 0, 0, 1.25), opacity .15s ease-out;
     transition: all .2s cubic-bezier(0.5, 0, 0, 1.25), opacity .15s ease-out;
     z-index: 9;
     &:hover .option:not(:hover) {
@@ -143,6 +164,8 @@ $arrow_color: $gray !default;
     padding-left: $dropdown_padding;
     padding-right: $dropdown_padding + 11;
     text-align: left;
+    -webkit-transition  
+: all 0.2s;
     transition: all 0.2s;
     &:hover, &.focus, &.selected.focus { 
       background-color: $gray_lighter;

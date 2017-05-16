@@ -42,19 +42,23 @@
     right: 12px;
     top: 50%;
     -webkit-transform-origin: 66% 66%;
+        -ms-transform-origin: 66% 66%;
             transform-origin: 66% 66%;
     -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
             transform: rotate(45deg);
     -webkit-transition: all 0.15s ease-in-out;
     transition: all 0.15s ease-in-out;
     width: 5px; }
   .nice-select.open:after {
     -webkit-transform: rotate(-135deg);
+        -ms-transform: rotate(-135deg);
             transform: rotate(-135deg); }
   .nice-select.open .list {
     opacity: 1;
     pointer-events: auto;
     -webkit-transform: scale(1) translateY(0);
+        -ms-transform: scale(1) translateY(0);
             transform: scale(1) translateY(0); }
   .nice-select.disabled {
     border-color: #e7ecf2;
@@ -96,8 +100,10 @@
     top: 100%;
     left: 0;
     -webkit-transform-origin: 50% 0;
+        -ms-transform-origin: 50% 0;
             transform-origin: 50% 0;
     -webkit-transform: scale(0.75) translateY(-21px);
+        -ms-transform: scale(0.75) translateY(-21px);
             transform: scale(0.75) translateY(-21px);
     -webkit-transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
     transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
@@ -125,12 +131,17 @@
       color: #90a1b5;
       cursor: default; }
 
+.no-csspointerevents .nice-select .list {
+  display: none; }
+
+.no-csspointerevents .nice-select.open .list {
+  display: block; }
+
 code[class*="language-"],
 pre[class*="language-"] {
   border-radius: 2px;
   color: #445870;
   -webkit-hyphens: none;
-     -moz-hyphens: none;
       -ms-hyphens: none;
           hyphens: none;
   line-height: 1.5;
@@ -225,12 +236,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #445870;
+  font-family: 'Work Sans', sans-serif;
   font-size: 14px;
   font-weight: normal;
+  letter-spacing: -0.25px;
   margin: 0;
-  padding: 0 18px;
-  font-family: 'Work Sans', sans-serif;
-  letter-spacing: -0.25px; }
+  padding: 0 18px; }
 
 p {
   line-height: 1.6;
@@ -238,19 +249,25 @@ p {
 
 h1 {
   font-size: 36px;
-  margin: 0 0 24px;
   font-weight: 300;
-  letter-spacing: -2px; }
+  letter-spacing: -2px;
+  margin: 0 0 24px; }
 
 h2 {
-  font-size: 21px;
+  font-size: 22px;
   font-weight: 400;
   margin: 0 0 12px;
   padding-top: 48px; }
 
 h3 {
-  font-weight: 600;
-  font-size: 14px; }
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 0 12px;
+  padding-top: 12px; }
+
+ul {
+  margin: 0;
+  padding-left: 16px; }
 
 a:not(.button) {
   color: #55a1fb;

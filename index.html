@@ -22,13 +22,10 @@
       
       <p>A lightweight jQuery plugin that replaces native select elements with customizable dropdowns.</p>
       
-      <a href="https://github.com/hernansartorio/jquery-nice-select/archive/v1.0.zip" class="button">Download</a>
+      <a href="https://github.com/hernansartorio/jquery-nice-select/archive/v1.1.0.zip" class="button">Download</a>
       <a href="https://github.com/hernansartorio/jquery-nice-select" class="button light">View on GitHub</a>
     </div>
-    
-    <h2>Why?</h2>
-    <p>I tried every similar plugin I could find, but after having a hard time customizing them I decided to build my own.</p>
-    
+
     <h2>Usage</h2>
     <p><strong>1.</strong> Include jQuery and the plugin.</p>
     
@@ -41,7 +38,7 @@
 
     <p>...or, ideally, import the SASS source (if you use SASS) in your main stylesheet for easier customization.</p>
     
-    <pre><code class="language-scss">@import 'nice-select';</code></pre>
+    <pre><code class="language-scss">@import 'nice-select'; // Or 'nice-select-prefixed'. See 'Notes' section.</code></pre>
     
     <p><strong>3.</strong> Finally, initialize the plugin.</p>
     
@@ -51,12 +48,14 @@
     
     <p>All done. That will turn this:</p>
     
-    <pre><code class="language-html">&lt;select&gt;
-  &lt;option value=&quot;1&quot;&gt;Some option&lt;/option&gt;
-  &lt;option value=&quot;2&quot;&gt;Another option&lt;/option&gt;
-  &lt;option value=&quot;3&quot; disabled&gt;A disabled option&lt;/option&gt;
-  &lt;option value=&quot;4&quot;&gt;Potato&lt;/option&gt;
-&lt;/select&gt;</code></pre>
+    <div class="box">
+      <select class="ignore">
+        <option value="1">Some option</option>
+        <option value="2">Another option</option>
+        <option value="3" disabled>A disabled option</option>
+        <option value="4">Potato</option>
+      </select>
+    </div>
     
     <p>...into this:</p>
     
@@ -68,18 +67,6 @@
         <option value="4">Potato</option>
       </select>
     </div>
-    
-    <p>For reference, this is the markup structure that was generated above:</p>
-  
-    <pre><code class="language-html">&lt;div class=&quot;nice-select&quot;&gt;
-  &lt;span class=&quot;current&quot;&gt;Some option&lt;/span&gt;
-  &lt;ul class=&quot;list&quot;&gt;
-    &lt;li class=&quot;option selected&quot;&gt;Some option&lt;/li&gt;
-    &lt;li class=&quot;option&quot;&gt;Another option&lt;/li&gt;
-    &lt;li class=&quot;option disabled&quot;&gt;A disabled option&lt;/li&gt;
-    &lt;li class=&quot;option&quot;&gt;Potato&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;</code></pre>
     
     <p>There are no settings (a native select doesn't have settings), although there are a couple of special features, documented below.</p>
     
@@ -145,22 +132,43 @@
       </select>
     </div>
     
+    <h2>Methods</h2>
+    
+    <h3>update</h3>
+    
+    <p>Updates the custom dropdown to reflect any changes made to the original select element.</p>
+    
+    <pre><code class="language-js">$('select').niceSelect('update');</code></pre>
+    
+    <h3>destroy</h3>
+    
+    <p>Removes the custom dropdown and unbinds all its events.</p>
+    
+    <pre><code class="language-js">$('select').niceSelect('destroy');</code></pre>
+    
     <h2>Notes</h2>  
     
-    <p>In some cases there can be a brief flash in which the native selects are displayed—between the time the page is loaded and the scripts are run. This can be fixed by adding a CSS rule to hide them beforehand:</p>
-        
-    <pre><code class="language-scss">select {
+    <ul>
+      <li>
+        <p>Autoprefixer is used to add vendor prefixes to CSS rules for older browser support. A <i>nice-select-prefixed.scss</i> file is also generated if you wish to include the SASS file in your project and you're not using Autoprefixer.</p>
+      </li>
+      <li>
+        <p>In some cases there can be a brief flash in which the native selects are displayed—between the time the page is loaded and the scripts are run. This can be fixed by adding a CSS rule to hide them beforehand:</p>
+            
+        <pre><code class="language-scss">select {
   display: none;
 }</code></pre>
 
-    <p>Note that the above rule will hide all native select elements. If you're only applying the plugin to some select elements you should adapt the rule accordingly.</p>
+        <p>Note that the above rule will hide all native select elements. If you're only applying the plugin to some select elements you should adapt the rule accordingly.</p>
+      </li>
+    </ul>
 
     <div class="footer">
       <h2>Use responsibly</h2>
       
       <p><a href="http://www.lukew.com/ff/entry.asp?1950">Dropdowns should be the UI of last resort.</a></p>
       
-      <a href="https://github.com/hernansartorio/jquery-nice-select/archive/v1.0.zip" class="button">Download</a>
+      <a href="https://github.com/hernansartorio/jquery-nice-select/archive/v1.1.0.zip" class="button">Download</a>
       <a href="https://github.com/hernansartorio/jquery-nice-select" class="button light">View on GitHub</a>
       
       <div class="credit">
@@ -178,9 +186,9 @@
   
   <script>
     $(document).ready(function() {
-      $('select').niceSelect();      
+      $('select:not(.ignore)').niceSelect();      
       FastClick.attach(document.body);
-    });
+    });    
   </script>
   
   <script>

@@ -14,8 +14,13 @@ gulp.task('compress', function() {
 gulp.task('sass', function () {
   gulp.src('scss/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer())
+    .pipe(autoprefixer({ browsers: ['> 1%', 'last 3 versions'] }))
     .pipe(gulp.dest('css'));
+    
+  gulp.src('scss/nice-select.scss')
+    .pipe(autoprefixer({ browsers: ['> 1%', 'last 3 versions'] }))
+    .pipe(rename({suffix: '-prefixed', prefix: '_'}))
+    .pipe(gulp.dest('scss'));
 });
 
 gulp.task('watch', function() {
