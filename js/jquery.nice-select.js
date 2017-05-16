@@ -58,7 +58,7 @@
       $select.after($('<div></div>')
         .addClass('nice-select')
         .addClass($select.attr('class') || '')
-        .addClass($select.attr('disabled') ? 'disabled' : '')
+        .addClass($select.prop('disabled') ? 'disabled' : '')
         .attr('tabindex', $select.attr('disabled') ? null : '0')
         .html('<span class="current"></span><ul class="list"></ul>')
       );
@@ -107,7 +107,7 @@
     
     // Close when clicking outside
     $(document).on('click.nice_select', function(event) {
-      if ($(event.target).closest('.nice-select').length === 0) {
+      if (($(event.target).closest('.nice-select').length === 0) && ($(event.target).next('.nice-select').length === 0)) {
         $('.nice-select').removeClass('open').find('.option');  
       }
     });
