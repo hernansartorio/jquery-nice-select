@@ -42,9 +42,9 @@
     right: 12px;
     top: 50%;
     -webkit-transform-origin: 66% 66%;
-    transform-origin: 66% 66%;
+            transform-origin: 66% 66%;
     -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
+            transform: rotate(45deg);
     -webkit-transition: all 0.15s ease-in-out;
     transition: all 0.15s ease-in-out;
     width: 5px; }
@@ -52,8 +52,6 @@
     -webkit-transform: rotate(-135deg);
             transform: rotate(-135deg); }
   .nice-select.open .list {
-    filter: alpha(opacity=100);
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     opacity: 1;
     pointer-events: auto;
     -webkit-transform: scale(1) translateY(0);
@@ -90,8 +88,6 @@
     box-shadow: 0 0 0 1px rgba(68, 88, 112, 0.11);
     box-sizing: border-box;
     margin-top: 4px;
-    filter: alpha(opacity=0);
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     opacity: 0;
     overflow: hidden;
     padding: 0;

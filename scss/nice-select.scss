@@ -57,11 +57,7 @@ $arrow_color: $gray !default;
     position: absolute; 
     right: 12px; 
     top: 50%; 
-    -ms-transform-origin: 66% 66%;
-    -webkit-transform-origin: 66% 66%;
     transform-origin: 66% 66%;
-    -ms-transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     transition: all 0.15s ease-in-out;
     width: 5px;
@@ -73,9 +69,7 @@ $arrow_color: $gray !default;
       transform: rotate(-135deg);
     }
     .list {
-      filter: alpha(opacity=100);
-       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-       opacity: 1;
+      opacity: 1;
       pointer-events: auto;
       transform: scale(1) translateY(0);
     }
@@ -125,8 +119,6 @@ $arrow_color: $gray !default;
     box-shadow: 0 0 0 1px rgba($gray_dark, .11);
     box-sizing: border-box;
     margin-top: 4px;
-    filter: alpha(opacity=0);
-     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     opacity: 0;
     overflow: hidden;
     padding: 0;
