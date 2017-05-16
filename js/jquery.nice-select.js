@@ -107,7 +107,7 @@
     
     // Close when clicking outside
     $(document).on('click.nice_select', function(event) {
-      if ($(event.target).closest('.nice-select').length === 0) {
+      if (($(event.target).closest('.nice-select').length === 0) && ($(event.target).next('.nice-select').length === 0)) {
         $('.nice-select').removeClass('open').find('.option');  
       }
     });
