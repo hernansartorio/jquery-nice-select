@@ -71,16 +71,17 @@
       
       $options.each(function(i) {
         var $option = $(this);
-        var display = $option.data('display');
+        var display = $option.data('display') || null;
 
-        $dropdown.find('ul').append($('<li></li>')
-          .attr('data-value', $option.val())
-          .attr('data-display', (display || null))
+        var $optionListItem = $('<li>/')
+          .data($.extend($option.data(), { value: $option.val(), display: display }))
           .addClass('option' +
             ($option.is(':selected') ? ' selected' : '') +
             ($option.is(':disabled') ? ' disabled' : ''))
-          .html($option.text())
-        );
+          .addClass($option.attr('class'))
+          .html($option.text());
+
+        $optionListItem.appendTo($dropdown.find('ul'));
       });
     }
     
