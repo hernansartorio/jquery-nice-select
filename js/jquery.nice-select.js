@@ -90,7 +90,7 @@
     $(document).off('.nice_select');
     
     // Open/close
-    $(document).on('click.nice_select', '.nice-select', function(event) {
+    $(document).on('click.nice_select', '.nice-select:not(.disabled)', function(event) {
       var $dropdown = $(this);
       
       $('.nice-select').not($dropdown).removeClass('open');
