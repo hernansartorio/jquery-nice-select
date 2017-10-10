@@ -31,4 +31,45 @@ $(document).ready(function() {
 });
 ```
 
+## Usage with Vue.js
+
+Require plugin in `bootstrap.js` or other root js script:
+
+```js
+// ... code
+try {
+    window.$ = window.jQuery = require('jquery');
+    
+    require('jquery-nice-select');
+    // .. load other plugin 
+    require('bootstrap-sass');
+} catch (e) {}
+```
+
+Then finally in your component you must define new directive:
+
+```vue
+<template>
+    <select v-nice-select>
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option N</option>
+    </select>
+</template>
+
+<script>
+export default {
+    directives: {
+        niceSelect: {
+            componentUpdated(el) {
+                $(el).niceSelect();
+            }
+        }
+    }
+}
+</script>
+```
+
+---
+
 Full documentation and examples at [hernansartorio.com/jquery-nice-select](http://hernansartorio.com/jquery-nice-select).
