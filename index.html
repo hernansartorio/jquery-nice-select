@@ -131,7 +131,50 @@
         <option value="4">Potato</option>
       </select>
     </div>
+
+    <h2>Create a grouping of options</h2>
+
+    <p>All done. That will turn this:</p>
     
+    <div class="box">
+      <select class="wide ignore">
+        <optgroup label="Swedish Cars">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+        </optgroup>
+        <optgroup label="German Cars" disabled>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </optgroup>
+        <optgroup label="British Cars">
+          <option value="2">Dodge</option>
+          <option value="3" disabled>Ford</option>
+          <option value="4">Jeep</option>
+        </optgroup>
+      </select>
+    </div>
+    
+    <p>...into this:</p>
+
+    <div class="box">
+      <label>Group of related options</label>
+      <select class="wide">
+          <optgroup label="Swedish Cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+          </optgroup>
+          <optgroup label="German Cars" disabled>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </optgroup>
+          <optgroup label="British Cars">
+            <option value="2">Dodge</option>
+            <option value="3" disabled>Ford</option>
+            <option value="4">Jeep</option>
+          </optgroup>
+        </select>
+    </div>
+
     <h2>Methods</h2>
     
     <h3>update</h3>

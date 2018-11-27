@@ -140,7 +140,7 @@ $arrow_color: $gray !default;
     list-style: none;
     min-height: $input_height - 2;
     outline: none;
-    padding-left: $dropdown_padding;
+    padding-left: $dropdown_padding * 2;
     padding-right: $dropdown_padding + 11;
     text-align: left;
     transition: all 0.2s;
@@ -155,6 +155,33 @@ $arrow_color: $gray !default;
       color: $gray;
       cursor: default;
     }
+  }
+
+  .optgroup {
+    cursor: default;
+    line-height: $input_height - 2;
+    list-style: none;
+    min-height: $input_height - 2;
+    outline: none;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+
+    > span {
+      color: black;
+      font-weight: bold;
+      padding-left: $dropdown_padding;      
+    }
+
+    &.disabled > span {
+      color: $gray;
+    }
+  }
+  
+  .sublist {
+    padding-left: 0;
   }
 }
 

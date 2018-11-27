@@ -64,24 +64,57 @@
       );
         
       var $dropdown = $select.next();
-      var $options = $select.find('option');
-      var $selected = $select.find('option:selected');
+      var $optgroups = $select.find('optgroup');
       
+      var $selected = $select.find('option:selected');
       $dropdown.find('.current').html($selected.data('display') || $selected.text());
       
-      $options.each(function(i) {
-        var $option = $(this);
-        var display = $option.data('display');
+      if($optgroups.length === 0) {
+        var $options = $select.find('option');
+  
+        $options.each(function(i) {
+          var $option = $(this);
+          var display = $option.data('display');
+  
+          $dropdown.find('ul').append($('<li></li>')
+            .attr('data-value', $option.val())
+            .attr('data-display', (display || null))
+            .addClass('option' +
+              ($option.is(':selected') ? ' selected' : '') +
+              ($option.is(':disabled') ? ' disabled' : ''))
+            .html($option.text())
+          );
+        });
+      }
+      else {
+        $optgroups.each(function() {
+          var $optgroup = $(this);
+          var $niceOptGroup = $('<li class="optgroup">' +
+            '<span>' + $optgroup.attr('label') + '</span>' +
+            '<ul class="sublist"></ul>' +
+          '</li>')
+          .addClass($optgroup.is(':disabled') ? ' disabled' : '');
 
-        $dropdown.find('ul').append($('<li></li>')
-          .attr('data-value', $option.val())
-          .attr('data-display', (display || null))
-          .addClass('option' +
-            ($option.is(':selected') ? ' selected' : '') +
-            ($option.is(':disabled') ? ' disabled' : ''))
-          .html($option.text())
-        );
-      });
+          $dropdown.find('ul.list').append($niceOptGroup);
+          var sublist = $niceOptGroup.find('.sublist');
+
+          var $options = $optgroup.find('option');
+
+          $options.each(function(i) {
+            var $option = $(this);
+            var display = $option.data('display');
+    
+            sublist.append($('<li></li>')
+              .attr('data-value', $option.val())
+              .attr('data-display', (display || null))
+              .addClass('option' +
+                ($option.is(':selected') ? ' selected' : '') +
+                ($optgroup.is(':disabled') || $option.is(':disabled') ? ' disabled' : ''))
+              .html($option.text())
+            );
+          });
+        })
+      }
     }
     
     /* Event listeners */
@@ -149,6 +182,16 @@
             $dropdown.find('.focus').removeClass('focus');
             $next.addClass('focus');
           }
+          else {
+            var $nextOptGroup = $focused_option.closest('.optgroup').nextAll(':not(.disabled)');
+            if($nextOptGroup.length > 0) {
+              $next = $nextOptGroup.find('.option:not(.disabled)').first();
+              if ($next.length > 0) {
+                $dropdown.find('.focus').removeClass('focus');
+                $next.addClass('focus');
+              }
+            }
+          }
         }
         return false;
       // Up
@@ -160,6 +203,16 @@
           if ($prev.length > 0) {
             $dropdown.find('.focus').removeClass('focus');
             $prev.addClass('focus');
+          }
+          else {
+            var $prevOptGroup = $focused_option.closest('.optgroup').prevAll(':not(.disabled)');
+            if($prevOptGroup.length > 0) {
+              $prev = $prevOptGroup.find('.option:not(.disabled)').last();
+              if ($prev.length > 0) {
+                $dropdown.find('.focus').removeClass('focus');
+                $prev.addClass('focus');
+              }
+            }
           }
         }
         return false;
