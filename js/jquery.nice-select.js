@@ -120,8 +120,8 @@
       $dropdown.find('.selected').removeClass('selected');
       $option.addClass('selected');
       
-      var text = $option.data('display') || $option.text();
-      $dropdown.find('.current').text(text);
+      var html = $option.data('display') || $option.html();
+      $dropdown.find('.current').html(html);
       
       $dropdown.prev('select').val($option.data('value')).trigger('change');
     });
