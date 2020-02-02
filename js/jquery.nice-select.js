@@ -66,22 +66,44 @@
       var $dropdown = $select.next();
       var $options = $select.find('option');
       var $selected = $select.find('option:selected');
+      var $optgroups = $select.find('optgroup');
+
+      // Initialize optgroups indexes if not present
+      $optgroups.each(function(i) {
+        var group = $(this).data('i');
+        if( typeof group === 'undefined') {
+          var group = $(this).data('i', i+1);
+        }
+      });
       
       $dropdown.find('.current').html($selected.data('display') || $selected.text());
       
       $options.each(function(i) {
         var $option = $(this);
         var display = $option.data('display');
+        var group = $option.parents('optgroup').data('i');
 
         $dropdown.find('ul').append($('<li></li>')
           .attr('data-value', $option.val())
           .attr('data-display', (display || null))
+          .attr('data-group', (group || null))
           .addClass('option' +
             ($option.is(':selected') ? ' selected' : '') +
             ($option.is(':disabled') ? ' disabled' : ''))
           .html($option.text())
         );
       });
+      
+      $optgroups.each(function(i, g) {
+        label = $(g).attr('label')
+        $dropdown.find('ul li').filter(function() {
+          return $(this).data('group') == $(g).data('i')
+        })
+        .wrapAll('<div class="optgroup"/>')
+        .parent()
+        .prepend('<span class="label">' + label + '</span>')
+      });
+
     }
     
     /* Event listeners */
