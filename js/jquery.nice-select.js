@@ -122,7 +122,7 @@
             $dropdown.find('.selected').removeClass('selected');
             $option.addClass('selected');
       
-            var text = $option.data('display') || "<img src='" + $option.attr('data-image') + "' width='50'>" + $option.text();
+            var text = $option.data('display') || $option.attr('data-image') ? "<img src='" + $option.attr('data-image') + "' width='50'>" + $option.text() :  $option.text();
             $dropdown.find('.current').html(text);
       
             $dropdown.prev('select').val($option.data('value')).trigger('change');
