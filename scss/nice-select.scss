@@ -3,7 +3,7 @@ $font_size: 14px !default;
 $font_size_small: 12px !default;
 
 $input_border_radius: 5px !default;
-$input_height: 42px !default;
+$input_height_: 42px !default;
 $input_height_small: 36px !default;
 $dropdown_padding: 18px !default;
 
@@ -29,7 +29,7 @@ $arrow_color: $gray !default;
   font-size: $font_size;
   font-weight: normal;
   height: $input_height;
-  line-height: $input_height - 2;
+  line-height: $input_height_ - 2;
   outline: none;
   padding-left: $dropdown_padding;
   padding-right: $dropdown_padding + 12;
@@ -126,7 +126,7 @@ $arrow_color: $gray !default;
     position: absolute;
     top: 100%; left: 0;
     transform-origin: 50% 0;
-    transform: scale(.75) translateY(- $input_height / 2);
+    transform: scale(.75) translateY(calc(-1 * ($input_height_ / 2)));
     transition: all .2s cubic-bezier(0.5, 0, 0, 1.25), opacity .15s ease-out;
     z-index: 9;
     &:hover .option:not(:hover) {
@@ -136,9 +136,9 @@ $arrow_color: $gray !default;
   .option {
     cursor: pointer;
     font-weight: 400;
-    line-height: $input_height - 2;
+    line-height: $input_height_ - 2;
     list-style: none;
-    min-height: $input_height - 2;
+    min-height: $input_height_ - 2;
     outline: none;
     padding-left: $dropdown_padding;
     padding-right: $dropdown_padding + 11;
